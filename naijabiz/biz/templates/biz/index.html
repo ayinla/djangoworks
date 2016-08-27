@@ -1,6 +1,10 @@
 {% extends "biz/base.html" %}
 {% block content %}
 {% for b in bizs %}
-  <p> {{ b.name }} {{ b.address }}</p>
+  <p> {{ b.name }}
+    Address: {{ b.address }}
+    City: {{ b.city }}
+    State: {{b.state}}
+    Tel: {{b.telephone}} </p>
 {% endfor %}
 {% endblock %}
