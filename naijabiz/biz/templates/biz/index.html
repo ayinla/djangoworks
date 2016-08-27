@@ -1,0 +1,6 @@
+{% extends "biz/base.html" %}
+{% block content %}
+{% for b in bizs %}
+  <p> {{ b.name }} {{ b.address }}</p>
+{% endfor %}
+{% endblock %}
