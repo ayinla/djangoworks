@@ -1,10 +1,44 @@
+
 {% extends "biz/base.html" %}
+{% load staticfiles %}
 {% block content %}
+<div class="container">
+  <div class="row">
+  <button class="btn btn-default dropdown-toggle col-sm-2" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Bussiness
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Abuja</a></li>
+    <li><a href="#">Lagos</a></li>
+    <li><a href="#">Osun</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+
+  <button class="btn btn-default dropdown-toggle col-sm-2" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    States
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Food</a></li>
+    <li><a href="#">Lagos</a></li>
+    <li><a href="#">Osun</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+</div>
+
+<div class="container col-sm-2" align="left" style="background-color:Khaki">
 {% for b in bizs %}
-  <p> {{ b.name }}
-    Address: {{ b.address }}
-    City: {{ b.city }}
-    State: {{b.state}}
-    Tel: {{b.telephone}} </p>
+<p> <b>{{ b.name | title}} </b> </p>
+<p>  Address: {{ b.address | title}}</p>
+<p>  City: {{ b.city| title}}</p>
+<p>  State: {{b.state|title}}</p>
+<p>  Tel: {{b.telephone }}</p>
+<p>  URL: {{b.url }}</p>
 {% endfor %}
+</div>
+
 {% endblock %}

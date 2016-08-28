@@ -10,3 +10,4 @@ class Biz(models.Model):
     state = models.CharField(max_length=20)
     biztype= models.CharField(max_length=20)
     telephone = models.CharField(max_length=10)
+    url = models.CharField(max_length=200, default="")
