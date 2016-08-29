@@ -2,43 +2,56 @@
 {% extends "biz/base.html" %}
 {% load staticfiles %}
 {% block content %}
-<div class="container">
-  <div class="row">
-  <button class="btn btn-default dropdown-toggle col-sm-2" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Bussiness
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Abuja</a></li>
-    <li><a href="#">Lagos</a></li>
-    <li><a href="#">Osun</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
 
-  <button class="btn btn-default dropdown-toggle col-sm-2" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    States
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Food</a></li>
-    <li><a href="#">Lagos</a></li>
-    <li><a href="#">Osun</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
-</div>
-</div>
+    <div class="container-fluid text-center">
+      <div class="row content">
+        <div class="col-sm-2 sidenav">
 
-<div class="container col-sm-2" align="left" style="background-color:Khaki">
-{% for b in bizs %}
-<p> <b>{{ b.name | title}} </b> </p>
-<p>  Address: {{ b.address | title}}</p>
-<p>  City: {{ b.city| title}}</p>
-<p>  State: {{b.state|title}}</p>
-<p>  Tel: {{b.telephone }}</p>
-<p>  URL: {{b.url }}</p>
-{% endfor %}
-</div>
+          <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">State
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+                </ul>
+          </div>
+          <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Business
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">HTML</a></li>
+                  <li><a href="#">CSS</a></li>
+                  <li><a href="#">JavaScript</a></li>
+                </ul>
+          </div>
+
+          </div>
+
+        <div class="col-sm-8 text-left">
+          <form class="form-inline  text-center">
+            <input type="text" class="form-control" size="50" placeholder="Search ...">
+            <button type="button" class="btn btn-danger">Search!</button>
+          </form>
+        </div>
+
+        <div class="col-sm-2 sidenav">
+
+          <div class="well">
+              {% for b in bizs %}
+              <p> <b>{{ b.name | title}} </b> </p>
+              <p>  Address: {{ b.address | title}}</p>
+              <p>  City: {{ b.city| title}}</p>
+              <p>  State: {{b.state|title}}</p>
+              <p>  Tel: {{b.telephone }}</p>
+              <p>  URL: {{b.url }}</p>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
 
 {% endblock %}

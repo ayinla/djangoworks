@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from confession.views import index, confession
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', index, name='index'),
+    url(r'^index/', index, name='index'),
+    url(r'^confession/', confession, name='confession'),
+
+
 ]

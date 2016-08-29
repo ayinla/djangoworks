@@ -3,6 +3,12 @@ h1 a {
     font-family: "cursive";
 }
 
+<style>
+.jumbotron {
+    background-color: #f4511e; /* Orange */
+    color: #ffffff;
+}
+</style>
 
 .page-header {
     background-color: #FFA07A;
